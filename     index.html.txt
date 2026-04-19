@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Sections */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.page1 { background: #ffe6eb; }
+.page2 { background: #fff0f5; }
+.page3 { background: #ffe6eb; }
+
+h1 {
+    font-size: 30px;
+    color: #ff4d6d;
+}
+
+h2 {
+    font-size: 22px;
+    color: #ff4d6d;
+}
+
+/* Images */
+img {
+    width: 45%;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+/* Letter */
+.letter {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    width: 90%;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-size: 15px;
+}
+
+/* Video */
+#videoBox {
+    display: none;
+    margin-top: 15px;
+}
+
+video {
+    width: 90%;
+    border-radius: 12px;
+}
+
+/* Password Screen */
+#lockScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ffe6eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 PASSWORD -->
+<div id="lockScreen">
+    <h2 style="color:#ff4d6d;">Enter Password ❤️</h2>
+    <input type="password" id="passwordInput" placeholder="Hint: our special word 💖"
+    style="padding:12px; border-radius:10px; border:none; margin:10px; width:70%;">
+
+    <button onclick="checkPassword()">Unlock 💖</button>
+    <p id="errorMsg" style="color:red;"></p>
+</div>
+
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="your-song.mp3" type="audio/mp3">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="section page1">
+    <h1>Happy Birthday ❤️</h1>
+    <p>To my favorite person, my safe place 💖</p>
+    <p style="font-size:13px;">Scroll down ↓</p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="section page2">
+    <h2>Our Moments 📸</h2>
+
+    <div>
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+    </div>
+
+    <div class="letter">
+        <p>
+        Happy Birthday my love ❤️<br><br>
+
+        Sometimes I feel like our life story is just like one of those Bollywood films…  
+        full of unexpected moments, a little drama, so many ups and downs…  
+        but somehow, through everything, we found our way back to each other.  
+
+        And here we are today 💖  
+
+        With you, even the simplest moments feel special.  
+        You’ve become my comfort, my peace, and my happiest place.  
+        I don’t know what the future holds, but I know I want you in it.  
+
+        Thank you for being you, for staying, and for loving me the way you do.  
+
+        I love you more than I can ever explain ❤️
+        </p>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="section page3">
+    <h2>Tap for Surprise 🎁</h2>
+    <button onclick="showVideo()">Open ❤️</button>
+
+    <div id="videoBox">
+        <video controls>
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<script>
+function checkPassword() {
+    let pass = document.getElementById("passwordInput").value;
+
+    if(pass === "annu20") {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("bgMusic").play();
+    } else {
+        document.getElementById("errorMsg").innerText = "Wrong password 😢";
+    }
+}
+
+function showVideo() {
+    document.getElementById("videoBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
